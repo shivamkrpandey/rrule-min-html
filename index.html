@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://jakubroztocil.github.io/rrule/dist/es5/rrule-tz.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const RRule = rrule.RRule;
+
+            const rule = new RRule({
+                freq: RRule.WEEKLY,
+                interval: 5,
+                byweekday: [RRule.MO, RRule.FR],
+                dtstart: new Date(Date.UTC(2015, 1, 1, 10, 30)),
+                until: new Date(Date.UTC(2020, 12, 31))
+            });
+
+            alert(rule.between(new Date(Date.UTC(2018, 7, 1)), new Date(Date.UTC(2019, 8, 1))));
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
